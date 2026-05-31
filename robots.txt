@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /terms-of-service.html
+Disallow: /general-terms.html
+Disallow: /creator-terms.html
+
+Sitemap: https://join.fantube.app/sitemap.xml
