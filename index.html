@@ -2,7 +2,10 @@
 <html lang="my" data-lang="my">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="mobile-web-app-capable" content="yes">
 <title>FanTube — Myanmar Creator Monetization Platform</title>
 <meta name="description" content="Reach ကို Social Media မှာ ရှာပါ။ Revenue ကို FanTube မှာ ယူပါ။ Core Fan 1,000 နဲ့ တည်ငြိမ်တဲ့ ကိုယ်ပိုင်ဝင်ငွေ တည်ဆောက်ပါ။">
 <meta name="robots" content="index, follow">
@@ -39,11 +42,23 @@
   --my-font:'YoeShin','Sora',sans-serif;
   --head-font:'Sora',sans-serif;
 }
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}
 body{
   font-family:var(--en-font);
   background:var(--ink);color:var(--cream);overflow-x:hidden;line-height:1.6;-webkit-font-smoothing:antialiased;
+  overscroll-behavior-y:none;
+  padding-left:env(safe-area-inset-left);padding-right:env(safe-area-inset-right);
+}
+/* native feel: smooth momentum, no text inflation, no blue tap box */
+button,a,.btn,input,select,textarea{-webkit-tap-highlight-color:transparent}
+@media(hover:none){
+  /* touch devices: replace hover lifts with tap (active) feedback */
+  .btn-primary:active{transform:scale(.97)}
+  .btn-ghost:active{transform:scale(.97)}
+  .feat:active{transform:scale(.99)}
+  .stream-card:active{transform:scale(.98)}
+  .faq-q:active{opacity:.7}
 }
 /* When MY active, headings + body use YoeShin; Sora reserved for numerals/latin accents */
 html[data-lang="my"] body{font-family:var(--my-font);line-height:1.85}
@@ -82,8 +97,8 @@ html[data-lang="en"] li.lang-en{display:flex}
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
 
 /* NAV */
-header{position:fixed;top:0;left:0;right:0;z-index:100;transition:.4s}
-header.scrolled{background:rgba(12,2,7,.72);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+header{position:fixed;top:0;left:0;right:0;z-index:100;transition:.4s;padding-top:env(safe-area-inset-top)}
+header.scrolled{background:rgba(12,2,7,.72);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
 nav{display:flex;align-items:center;justify-content:space-between;height:74px;gap:16px}
 .brand{display:flex;align-items:center;gap:12px;font-family:'Sora';font-weight:700;font-size:1.25rem}
 .brand img{width:38px;height:38px;border-radius:11px;box-shadow:0 6px 22px rgba(228,34,120,.45)}
@@ -108,7 +123,7 @@ nav{display:flex;align-items:center;justify-content:space-between;height:74px;ga
 .lang-switch button.active{background:linear-gradient(135deg,var(--pink),var(--pink-soft));color:#fff}
 
 /* HERO */
-.hero{position:relative;padding:170px 0 90px;min-height:100vh;display:flex;align-items:center}
+.hero{position:relative;padding:170px 0 90px;min-height:100vh;min-height:100dvh;display:flex;align-items:center}
 .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center;width:100%}
 .hero h1{font-size:clamp(2.2rem,5vw,4.2rem);font-weight:800;margin:22px 0 24px}
 .hero h1 .grad{background:linear-gradient(120deg,#ff8fc0,#e42278);-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -132,7 +147,7 @@ nav{display:flex;align-items:center;justify-content:space-between;height:74px;ga
 .cc4{width:166px;top:248px;left:236px;z-index:6;animation:bob 6.2s ease-in-out infinite .4s}
 .cc5{width:148px;top:430px;left:150px;z-index:7;animation:bob 7.4s ease-in-out infinite 1.2s}
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
-.float-badge{position:absolute;background:rgba(20,4,11,.85);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:14px;padding:10px 14px;font-family:'Sora';font-size:.78rem;display:flex;align-items:center;gap:9px;box-shadow:0 12px 30px rgba(0,0,0,.4);z-index:6}
+.float-badge{position:absolute;background:rgba(20,4,11,.85);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:14px;padding:10px 14px;font-family:'Sora';font-size:.78rem;display:flex;align-items:center;gap:9px;box-shadow:0 12px 30px rgba(0,0,0,.4);z-index:6}
 .float-badge .ic{width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,var(--pink),var(--pink-soft));display:flex;align-items:center;justify-content:center;font-size:.8rem}
 .fb1{top:96px;right:-18px;animation:bob 5s ease-in-out infinite}
 .fb2{bottom:70px;right:-22px;animation:bob 5s ease-in-out infinite 1s}
@@ -322,8 +337,9 @@ html[data-lang="en"] .faq-q{font-family:'Sora'}
 .field label .req{color:var(--pink-soft)}
 .field input,.field select,.field textarea{
   width:100%;background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:13px;
-  padding:14px 16px;color:var(--cream);font-family:inherit;font-size:.96rem;transition:.25s}
-.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--pink-soft);background:rgba(255,255,255,.07)}
+  padding:14px 16px;color:var(--cream);font-family:inherit;font-size:16px;transition:.25s}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--pink-soft);background-color:rgba(255,255,255,.07)}
+.field select{-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23caa9b8' d='M6 8 0 0h12z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:40px}
 .field select option{background:#1a0710}
 .field textarea{resize:vertical;min-height:84px}
 .row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
@@ -338,7 +354,7 @@ html[data-lang="en"] .faq-q{font-family:'Sora'}
 .form-error-banner{display:none;background:rgba(255,93,93,.12);border:1px solid rgba(255,93,93,.4);color:#ffb3b3;border-radius:12px;padding:14px 16px;font-size:.9rem;margin-bottom:18px}
 
 /* FOOTER */
-footer{border-top:1px solid var(--line);padding:60px 0 36px;margin-top:40px}
+footer{border-top:1px solid var(--line);padding:60px 0 calc(36px + env(safe-area-inset-bottom));margin-top:40px}
 .foot-grid{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;margin-bottom:40px}
 .foot-brand{max-width:300px}
 .foot-brand .brand{margin-bottom:14px}
@@ -352,7 +368,7 @@ footer{border-top:1px solid var(--line);padding:60px 0 36px;margin-top:40px}
   .hero-grid,.rev,.mmqr,.infra-grid,.calc-grid{grid-template-columns:1fr;gap:40px}
   .hero-visual{height:650px;margin-top:10px}
   .feat-grid{grid-template-columns:1fr 1fr}
-  .navlinks{position:fixed;top:74px;left:0;right:0;flex-direction:column;background:rgba(12,2,7,.97);backdrop-filter:blur(20px);padding:26px;gap:20px;border-bottom:1px solid var(--line);transform:translateY(-130%);transition:.4s;align-items:flex-start}
+  .navlinks{position:fixed;top:calc(74px + env(safe-area-inset-top));left:0;right:0;flex-direction:column;background:rgba(12,2,7,.97);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);padding:26px;gap:20px;border-bottom:1px solid var(--line);transform:translateY(-130%);transition:.4s;align-items:flex-start;max-height:calc(100dvh - 74px);overflow-y:auto}
   .navlinks.open{transform:none}
   .menu-toggle{display:block}
 }
@@ -830,7 +846,7 @@ const scIO=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.
 document.querySelectorAll('.showcase-block').forEach(el=>scIO.observe(el));
 
 /* subtle hero parallax (Apple-style depth) — disabled for reduced motion */
-const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches || matchMedia('(hover:none)').matches;
 if(!reduce){
   const hv=document.querySelector('.hero-visual');
   let ticking=false;
