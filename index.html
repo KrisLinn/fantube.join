@@ -84,6 +84,8 @@ html[data-lang="en"] li.lang-en{display:flex}
   display:inline-flex;align-items:center;gap:10px;
 }
 .eyebrow::before{content:"";width:26px;height:1px;background:var(--pink-soft);opacity:.6}
+/* MY eyebrow: use site Myanmar font, drop uppercase/wide-tracking (not suited to Burmese), refined premium spacing */
+html[data-lang="my"] .eyebrow{font-family:var(--my-font);text-transform:none;letter-spacing:.04em;font-size:.82rem;font-weight:600;line-height:1.6}
 
 /* BACKGROUND */
 .bg-orbs{position:fixed;inset:0;z-index:-2;overflow:hidden;pointer-events:none}
@@ -126,6 +128,8 @@ nav{display:flex;align-items:center;justify-content:space-between;height:74px;ga
 .hero{position:relative;padding:170px 0 90px;min-height:100vh;min-height:100dvh;display:flex;align-items:center}
 .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center;width:100%}
 .hero h1{font-size:clamp(2.2rem,5vw,4.2rem);font-weight:800;margin:22px 0 24px}
+/* MY headline runs taller (Burmese glyphs + stacking) — scale down + tighten so it balances the side visual */
+html[data-lang="my"] .hero h1{font-size:clamp(1.9rem,3.9vw,3.2rem);line-height:1.42}
 .hero h1 .grad{background:linear-gradient(120deg,#ff8fc0,#e42278);-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero p.lead{font-size:1.12rem;color:#e9c8d8;max-width:540px;margin-bottom:22px}
 .hero-points{list-style:none;margin:0 0 34px;padding:0;display:flex;flex-direction:column;gap:13px;max-width:540px}
@@ -421,7 +425,7 @@ footer{border-top:1px solid var(--line);padding:60px 0 calc(36px + env(safe-area
     <div class="hero-copy reveal">
       <span class="eyebrow"><span class="lang-my">မြန်မာ့ထိပ်တန်း Creator များအတွက် သီးသန့် Premium Monetization စနစ်</span><span class="lang-en">Premium Business Infrastructure for Myanmar's Top Creators</span></span>
       <h1>
-        <span class="lang-my">View နဲ့တင် ကျေနပ်မနေပါနဲ့။<br><span class="grad">ပရိသတ်တွေကို FanTube မှာ ကိုယ့် Customer တွေအဖြစ်ချက်ချင်းပြောင်းလိုက်ပါ။</span></span>
+        <span class="lang-my">View နဲ့တင်ကျေနပ်မနေပါနဲ့။<br><span class="grad">ပရိသတ်တွေကို ကိုယ့် Customer တွေအဖြစ်ချက်ချင်းပြောင်းလိုက်ပါ။</span></span>
         <span class="lang-en">Don't settle for views.<br><span class="grad">Turn your audience into your customers on FanTube.</span></span>
       </h1>
       <p class="lead">
@@ -807,7 +811,7 @@ footer{border-top:1px solid var(--line);padding:60px 0 calc(36px + env(safe-area
       <div class="faq-item"><button class="faq-q"><span><span class="lang-my">ဝင်ငွေ ဘယ်လောက် ပြန်ရမလဲ?</span><span class="lang-en">How much of my earnings do I keep?</span></span><span class="pm">+</span></button><div class="faq-a"><p><span class="lang-my">ဝင်ငွေရဲ့ ၇၀% ကို သင် အမြဲ ရရှိပါမယ်။ FanTube က ပလက်ဖောင်းဝန်ဆောင်မှုအတွက် ၃၀% ပဲ ယူပြီး တိုးမြှင့်ခြင်း မရှိပါ။ Transaction fee များကိုလည်း သင့်ဝင်ငွေမှ ပြန်ဖြတ်မည် မဟုတ်ပါ။</span><span class="lang-en">You always keep 70% of everything you earn. FanTube takes a flat 30% that never increases — and transaction fees are never deducted from your income.</span></p></div></div>
       <div class="faq-item"><button class="faq-q"><span><span class="lang-my">ကိုယ်ပိုင် စျေးနှုန်း သတ်မှတ်နိုင်လား?</span><span class="lang-en">Can I set my own prices?</span></span><span class="pm">+</span></button><div class="faq-a"><p><span class="lang-my">ရပါတယ်။ Subscription Tier များနှင့် Content အားလုံးအတွက် စျေးနှုန်းကို သင်ကိုယ်တိုင် အပြည့်အဝ သတ်မှတ်နိုင်ပါတယ်။ ၁၅,၀၀၀ ကျပ် တန်ဖိုးရှိ Diamond Point ကို အနိမ့်ဆုံး ကြမ်းခင်းအဖြစ် သတ်မှတ်ထားပြီး၊ ထိုအထက်တွင် သင့်တန်ဖိုးအတိုင်း လွတ်လပ်စွာ ဈေးသတ်မှတ်နိုင်ပါသည်။</span><span class="lang-en">Yes — you have full control over pricing for every subscription tier and piece of content. The Diamond floor starts at the equivalent of 15,000 Ks, and above that you're free to price to your own value.</span></p></div></div>
       <div class="faq-item"><button class="faq-q"><span><span class="lang-my">Fans တွေ ဘယ်လို ပေးချေမလဲ?</span><span class="lang-en">How do fans pay?</span></span><span class="pm">+</span></button><div class="faq-a"><p><span class="lang-my">KBZPay၊ WavePay စတဲ့ ပြည်တွင်းသုံး Wallet များဖြင့် MMQR မှတစ်ဆင့် ၁ ချက်နှိပ်ရုံနဲ့ ပေးချေနိုင်ပါတယ်။</span><span class="lang-en">Through MMQR with local wallets like KBZPay and WavePay — a single tap.</span></p></div></div>
-      <div class="faq-item"><button class="faq-q"><span><span class="lang-my">Content အခိုးခံရရင် Content တွေ ဘယ်လိုကာကွယ်ပေးထားလဲ?</span><span class="lang-en">What about content theft?</span></span><span class="pm">+</span></button><div class="faq-a"><p><span class="lang-my">Android FLAG_SECURE နဲ့ iOS Capture Detection ကြောင့် Screenshot/Screen Record လုပ်ရင် Black Screen ဖြစ်သွားပါတယ်။</span><span class="lang-en">Android FLAG_SECURE and iOS capture detection turn the screen black on any screenshot or recording attempt.</span></p></div></div>
+      <div class="faq-item"><button class="faq-q"><span><span class="lang-my">Content တွေ ဘယ်လိုကာကွယ်ပေးထားလဲ?</span><span class="lang-en">What about content theft?</span></span><span class="pm">+</span></button><div class="faq-a"><p><span class="lang-my">Android FLAG_SECURE နဲ့ iOS Capture Detection ကြောင့် Screenshot/Screen Record လုပ်ရင် Black Screen ဖြစ်သွားပါတယ်။</span><span class="lang-en">Android FLAG_SECURE and iOS capture detection turn the screen black on any screenshot or recording attempt.</span></p></div></div>
       <div class="faq-item"><button class="faq-q"><span><span class="lang-my">ဘယ်အချိန် Payout ထုတ်ပေးလဲ?</span><span class="lang-en">When are payouts made?</span></span><span class="pm">+</span></button><div class="faq-a"><p><span class="lang-my">ဘဏ္ဍာရေး ပွင့်လင်းမြင်သာစွာဖြင့် လကုန်ရက်တိုင်း Payout ထုတ်ပေးပါသည်။</span><span class="lang-en">Transparent month-end payouts, every cycle.</span></p></div></div>
     </div>
   </div>
