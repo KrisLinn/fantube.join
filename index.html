@@ -129,7 +129,8 @@ nav{display:flex;align-items:center;justify-content:space-between;height:74px;ga
 .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center;width:100%}
 .hero h1{font-size:clamp(2.2rem,5vw,4.2rem);font-weight:800;margin:22px 0 24px}
 /* MY headline runs taller (Burmese glyphs + stacking) — scale down + tighten so it balances the side visual */
-html[data-lang="my"] .hero h1{font-size:clamp(1.9rem,3.9vw,3.2rem);line-height:1.42}
+html[data-lang="my"] .hero h1{font-size:clamp(1.6rem,3.4vw,2.9rem);line-height:1.45}
+html[data-lang="my"] .hero h1 .h1-line1{white-space:nowrap}
 .hero h1 .grad{background:linear-gradient(120deg,#ff8fc0,#e42278);-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero p.lead{font-size:1.12rem;color:#e9c8d8;max-width:540px;margin-bottom:22px}
 .hero-points{list-style:none;margin:0 0 34px;padding:0;display:flex;flex-direction:column;gap:13px;max-width:540px}
@@ -425,7 +426,7 @@ footer{border-top:1px solid var(--line);padding:60px 0 calc(36px + env(safe-area
     <div class="hero-copy reveal">
       <span class="eyebrow"><span class="lang-my">မြန်မာ့ထိပ်တန်း Creator များအတွက် သီးသန့် Premium Monetization စနစ်</span><span class="lang-en">Premium Business Infrastructure for Myanmar's Top Creators</span></span>
       <h1>
-        <span class="lang-my">View နဲ့တင်ကျေနပ်မနေပါနဲ့။<br><span class="grad">ပရိသတ်တွေကို ကိုယ့် Customer တွေအဖြစ်ချက်ချင်းပြောင်းလိုက်ပါ။</span></span>
+        <span class="lang-my"><span class="h1-line1">View နဲ့တင်ကျေနပ်မနေပါနဲ့။</span><br><span class="grad">ပရိသတ်တွေကို ကိုယ့် Customer တွေအဖြစ်ချက်ချင်းပြောင်းလိုက်ပါ။</span></span>
         <span class="lang-en">Don't settle for views.<br><span class="grad">Turn your audience into your customers on FanTube.</span></span>
       </h1>
       <p class="lead">
